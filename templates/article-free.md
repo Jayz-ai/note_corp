@@ -1,6 +1,6 @@
 ---
 title: "{{TITLE}}"
-status: draft
+status: draft          # idea / draft / review / ready / published
 type: free
 price: 0
 magazine: ""

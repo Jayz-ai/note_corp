@@ -7,6 +7,6 @@
 - [ ] その他
 
 ## 記事の場合
-- [ ] `templates/launch-checklist.md` を確認した
+- [ ] `review.md` の判定が合格になっている
 - [ ] frontmatter を更新した
 - [ ] 個人情報・機密情報を含んでいない

@@ -1,13 +1,13 @@
 name: 運営タスク
-description: 経理・法務・集客などの運営タスク
+description: 部署への依頼・社内タスク
 title: "[運営] "
 labels: ["ops"]
 body:
   - type: dropdown
-    id: area
+    id: dept
     attributes:
-      label: 領域
-      options: [経理, 税務, 法務, 集客, 商品設計, その他]
+      label: 担当部署
+      options: [CEO, COO, 企画部, 制作部, 編集・品質部, マーケティング部, 分析部]
     validations:
       required: true
   - type: textarea

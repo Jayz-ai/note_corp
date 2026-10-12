@@ -1,42 +1,48 @@
 # note_corp
 
-note（note.com）でのコンテンツ販売を主事業とする1人会社の運営リポジトリ。
-記事の企画〜公開、販売分析、会社運営（法務・経理・税務）をすべてここで管理する。
+note（note.com）でのコンテンツ販売を事業とする会社の運営リポジトリ。
+人間は CEO の1人だけで、そのほかの部署は Claude Code のエージェントが担当する。
 
-> ⚠️ このリポジトリは **Private** で運用すること。個人情報・口座情報・領収書は `private/` に置き、Git管理しない。
+- 組織図・決裁権限・会議体: [`org/README.md`](org/README.md)
+- ミッション・バリュー: [`org/charter.md`](org/charter.md)
+
+> ⚠️ このリポジトリは **Private** で運用すること。機密情報は `private/` に置く（Git の管理対象外）。
+
+## 使い方（Claude Code）
+
+| コマンド | 内容 |
+|---|---|
+| `/weekly-meeting` | 週次定例。全部署の状況を集め、議事録と CEO の決裁待ちリストを作る |
+| `/plan-ideas [テーマ]` | 企画会議。企画書を3本作り、CEO に採用を諮る |
+| `/produce-article <slug>` | 採用済みの企画を、執筆 → 品質審査 → 告知準備まで進める |
+| `/monthly-review [YYYY-MM]` | 月次経営会議。損益と来月の方針をまとめる |
+
+部署（エージェント）: `planner`（企画部）/ `writer`（制作部）/ `editor`（編集・品質部）/ `marketer`（マーケティング部）/ `analyst`（分析部・財務）
+
+## 記事の流れ
+
+```
+企画書(proposed) ─CEO採用→ adopted ─→ 記事 draft ─→ review ─合格→ ready ─CEOが公開→ published
+  企画部                          制作部      編集・品質部        マーケティング部が告知文を作成
+                                     ↑___不合格（差し戻しは最大2回）___|
+```
 
 ## ディレクトリ構成
 
-| パス | 用途 |
-|---|---|
-| `company/` | 会社情報・法務（特商法表記・設立）・経理・税務 |
-| `strategy/` | 事業計画・ペルソナ・商品ラインナップ・KPI |
-| `content/ideas/` | ネタ帳（バックログ） |
-| `content/drafts/` | 執筆中の記事（1記事 = 1フォルダ） |
-| `content/published/` | 公開済み記事（公開後に drafts から移動） |
-| `content/magazines/` | マガジン（記事のまとめ売り・定期購読）定義 |
-| `templates/` | 記事・マガジン・公開チェックリスト・月次レビューの雛形 |
-| `products/` | 商品ラインナップと価格設計 |
-| `marketing/` | 集客（X / Threads / LINE 等）と発信カレンダー |
-| `analytics/` | 売上ログ・月次レポート |
-| `ops/` | 週次ルーティン・利用ツール一覧 |
-| `scripts/` | 補助スクリプト |
-| `private/` | Git管理外（機密情報置き場） |
-
-## 記事制作フロー
-
-```
-ネタ出し → 下書き作成 → セルフレビュー → 公開 → 告知 → 数値記録
-ideas/      drafts/       チェックリスト    published/  marketing/  analytics/
-```
-
-1. `content/ideas/backlog.md` にネタを追加（または GitHub Issue「記事企画」で起票）
-2. `scripts/new-article.sh <slug> [paid|free]` で下書きフォルダを作成
-3. `templates/launch-checklist.md` で公開前チェック
-4. 公開したら frontmatter の `status` / `url` / `published_at` を更新し、`content/published/` へ `git mv`
-5. 月末に `templates/monthly-review.md` を `analytics/monthly/YYYY-MM.md` にコピーして振り返り
-
-## ブランチ運用
-
-- `main`: 公開済み・確定した内容
-- 作業ブランチ: `article/<slug>`、`ops/<topic>` など。PR でセルフレビューしてマージ
+| パス | 内容 | 担当部署 |
+|---|---|---|
+| `org/` | 組織図・憲章・役割・意思決定ログ・議事録 | COO |
+| `.claude/agents/` | 部署ごとのエージェント定義 | — |
+| `.claude/commands/` | 会議・制作ラインのコマンド | — |
+| `strategy/` | 事業計画・ペルソナ・KPI | 企画部 / 分析部 |
+| `content/ideas/` | ネタ帳（`backlog.md`）と企画書（`proposals/`） | 企画部 |
+| `content/drafts/` | 制作中の記事（1記事 = 1フォルダ。`article.md` と `review.md`） | 制作部 / 編集・品質部 |
+| `content/published/` | 公開済みの記事 | COO |
+| `content/magazines/` | マガジンの定義 | 企画部 |
+| `products/` | 商品ラインナップと価格 | 企画部 |
+| `marketing/` | 告知文・発信カレンダー | マーケティング部 |
+| `analytics/` | 売上・経費・月次レポート | 分析部 |
+| `templates/` | 企画書・記事・審査・月次レポートなどの雛形 | — |
+| `ops/` | 運営カレンダー・利用ツール | COO |
+| `scripts/` | 補助スクリプト（`new-article.sh`） | — |
+| `private/` | 機密情報（Git の管理対象外） | CEO |

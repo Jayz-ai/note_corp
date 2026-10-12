@@ -1,5 +1,9 @@
-# 分析
+# 分析部・財務
 
-- `sales-log.csv`: 記事ごと・期間ごとの集計値（購入者の個人情報は記録しない）
-  - `revenue` = price × sales、`fee` = note 手数料、`net` = revenue − fee
-- `monthly/YYYY-MM.md`: 月次レビュー（雛形 `templates/monthly-review.md`）
+| ファイル | 内容 |
+|---|---|
+| `sales-log.csv` | 記事ごと・期間ごとの売上の集計値。`revenue` = price × sales、`fee` = note の手数料、`net` = revenue − fee |
+| `expenses.csv` | 経費（ツール代・素材代・広告費など）。category は `tool` / `material` / `ad` / `outsourcing` / `other` |
+| `monthly/YYYY-MM.md` | 月次レポート（雛形は `templates/monthly-review.md`） |
+
+購入者の個人情報は記録しない。領収書などの証憑は `private/` に置く。

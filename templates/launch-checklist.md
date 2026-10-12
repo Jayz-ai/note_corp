@@ -1,21 +1,16 @@
-# 公開前チェックリスト
+# 公開チェックリスト（CEO用）
 
-## 内容
-- [ ] タイトルに「誰の・何が・どうなる」が入っている
-- [ ] 無料部分だけで購入判断ができる（得られること・対象者・目次）
-- [ ] 有料ラインの位置が適切
-- [ ] 誤字脱字・事実確認・引用元の明記
-- [ ] 他者の著作物・個人情報を無断で使っていない
+品質のチェックは編集・品質部が `review.md` で済ませている。CEO は note 上の設定と公開作業だけを行う。
 
-## note 設定
+## 公開前
+- [ ] `review.md` の判定が合格で、status が `ready` になっている
 - [ ] 見出し画像（1280×670 推奨）
 - [ ] ハッシュタグ
-- [ ] 価格・有料ライン
+- [ ] 価格・有料ラインの位置
 - [ ] マガジンへの追加
 - [ ] 公開日時（予約投稿）
 
 ## 公開後
-- [ ] frontmatter の status / url / published_at を更新し `content/published/` へ移動
-- [ ] SNS告知（`marketing/sns/`）
-- [ ] `products/README.md` を更新
-- [ ] 7日後の数値を `analytics/sales-log.csv` に記録
+- [ ] COO に URL を伝える（COO が frontmatter の status / url / published_at を更新し、`content/published/` へ移動する）
+- [ ] `marketing/sns/` の告知文を投稿する
+- [ ] 7日後の数値を COO（分析部）に渡す
