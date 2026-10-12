@@ -9,8 +9,8 @@ X を読むにはログイン済みの Chrome が必要なため、クラウド�
 | 実行 | 毎朝8時ごろ（PC 上でアプリが起動しているときだけ） |
 | 定義ファイル | `C:\Users\<ユーザー>\.claude\scheduled-tasks\note-factory-daily\SKILL.md`（PC 上） |
 | 作業フォルダ | `C:\Users\<ユーザー>\Documents\New project\note_factory` |
-| 担当の定義 | `note_factory/agents/01_neta_hiroi.md` ほか3本 |
-| 出力 | `note_factory/runs/YYYY-MM-DD/`（`01_themes.md` 〜 `04_final/`、`report.md`） |
+| 担当 | X の巡回（ネタ拾い）だけ。定義は `note_factory/agents/01_neta_hiroi.md` |
+| 出力 | `note_factory/runs/YYYY-MM-DD/01_themes.md` |
 
 ## 500円ラインとのつなぎ方
 ルーティンの `01_themes.md`（X の悩み投稿50本から選んだ10テーマ）を、500円ラインの **最優先のリサーチ素材** として使う。
@@ -25,14 +25,17 @@ X を読むにはログイン済みの Chrome が必要なため、クラウド�
 - 止まったセッションが「実行中」のまま残ると、翌日の実行も「already running」で始まらない
 - 対処: サイドバーで止まっているセッションを **Stop** → **Run now** を押して、出てくる承認（Bash・Chrome 操作・ファイル書き込み）を一度許可する。許可はタスクに保存され、翌日以降も使われる
 
-## 役割の重複について（CEO 判断事項）
-いまのルーティンは、X の巡回だけでなく、タイトル・執筆・検品まで1日10本ぶんを PC 上で行う。
-これは 500円ラインの ②〜④ と重なっている。次のどちらにするかは CEO が決める。
+## 役割分担（2026-10-12 CEO 決定: A案）
+ルーティンは X の巡回（①）だけを行う。②タイトル・③執筆・④検品は、このリポジトリの部署が 500円ラインとして行う。
+`note_factory/agents/` の `02_title.md` / `03_shippitsu.md` / `04_kenpin.md` は使わない（中身は `org/playbooks/500yen-line.md` に取り込み済み）。
 
-- **A. ルーティンは X の巡回（①）だけにする（推奨）**: ②〜④ はこのリポジトリの部署が行い、品質審査と記録を1か所にまとめる。下の「①だけにする場合の SKILL.md 案」に差し替える
-- **B. ルーティンは今のまま全工程を行う**: `04_final/` の原稿を、`scripts/new-article.sh <slug> 500` で作ったフォルダに移し、status を `review` にして編集・品質部の審査に回す
+### 切り替え手順（CEO が PC 上で行う）
+1. `C:\Users\<ユーザー>\.claude\scheduled-tasks\note-factory-daily\SKILL.md` を開き、先頭の `---` で囲まれた部分（name / description）は残して、本文を下の「SKILL.md 本文」に差し替える
+2. description を「X の悩み投稿を50本読み、500円note向けのテーマを10個選ぶ」に変える
+3. サイドバーで止まっているセッションがあれば **Stop** → **Run now** を押し、承認を一度許可する
+4. `runs/<日付>/01_themes.md` ができたことを確認する
 
-### ①だけにする場合の SKILL.md 案（A を選んだとき、PC 上の SKILL.md の本文と差し替える）
+### SKILL.md 本文
 
 ```
 500円noteのネタ拾い（X巡回）だけを行う。作業フォルダは `C:\Users\<ユーザー>\Documents\New project\note_factory`。
