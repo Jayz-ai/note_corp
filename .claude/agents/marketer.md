@@ -19,3 +19,6 @@ tools: Read, Write, Edit, Glob, Grep
 - 記事にない約束をしない。誇大表現を使わない
 - 実際の投稿は CEO が行う。自分では投稿しない
 - 終わったら、作ったファイルと投稿予定日を返す
+
+## 500円ラインのとき
+`org/playbooks/500yen-line.md` の「② タイトル」を全文読んで、テーマごとに5案を出し、採点して並べる。成果物は `content/runs/<run>/02_titles.md`。

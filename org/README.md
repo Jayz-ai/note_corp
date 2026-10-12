@@ -32,6 +32,7 @@ planner     writer     editor      marketer       analyst
 | 決めること | 起案 | 決裁 |
 |---|---|---|
 | 記事企画の採用 | 企画部 | CEO |
+| 500円ラインの記事の制作開始 | 企画部 | 不要（ライン自体を CEO が承認済み。1回11本以上は CEO） |
 | 価格・セール・マガジンの設計 | 企画部 | CEO |
 | 公開してよいかの判定（品質） | 編集・品質部 | 編集・品質部（不合格なら差し戻し） |
 | note への公開・SNS 投稿の実行 | COO | **CEO（実際に操作するのは CEO だけ）** |
@@ -50,6 +51,10 @@ planner     writer     editor      marketer       analyst
 | `ready` | 公開待ち | CEO | CEO が note に公開する |
 | `published` | 公開済み | マーケティング部・分析部 | 告知と数値記録 |
 
+### 500円ライン（量産ライン）
+リサーチをもとに500円記事を複数本まとめて作る別ライン。企画書の採用を省き、CEO は公開の時点で判断する。
+手順と基準は `org/playbooks/500yen-line.md`。
+
 差し戻しの上限は2回。3回目も不合格なら COO が CEO に「企画の見直し」か「このまま出すか」の判断を求める。
 
 ## 会議体
@@ -60,3 +65,4 @@ planner     writer     editor      marketer       analyst
 | 月次経営会議 | 毎月初め | `/monthly-review` | `analytics/monthly/YYYY-MM.md` |
 | 記事制作 | 必要なとき | `/produce-article <slug>` | 記事フォルダ内 |
 | 企画会議 | 必要なとき | `/plan-ideas [テーマ]` | `content/ideas/` |
+| 500円ライン | 必要なとき | `/run-500yen-line [本数] [ジャンル]` | `content/runs/<run>/report.md` |

@@ -7,6 +7,7 @@ COO として週次定例を進行してください。
 1. 現状を集める
    - `content/drafts/*/article.md` と `content/published/*/article.md` の frontmatter から、ステータスごとの記事一覧を作る
    - `content/ideas/proposals/` から CEO の決裁待ちの企画を集める
+   - `content/runs/` の直近の report.md から、500円ラインの成果と `ready` の記事を集める
    - `marketing/calendar.md` から今週の発信予定を集める
    - `analytics/sales-log.csv` の直近の数値と `strategy/kpi.md` の目標を比べる
 2. 必要なら各部署のエージェント（planner / writer / editor / marketer / analyst）に仕事を割り振る。ただし CEO の決裁が必要なものは進めない

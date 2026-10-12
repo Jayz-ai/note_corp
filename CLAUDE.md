@@ -17,6 +17,8 @@ note 販売会社の運営リポジトリ。人間は CEO（ユーザー）だ�
   - 記事の status: `draft` → `review` → `ready` → `published`
   - 企画書の status: `proposed` → `adopted` / `on-hold` / `rejected`
 - 公開したら `git mv` で `content/published/` に移す
+- 記事を `review` / `ready` に進める前に `scripts/check-article.py` を通す（禁止語・有料ライン・字数）
+- 500円ラインの記事は `org/playbooks/500yen-line.md` の4段構成に従う（`line: 500yen`）
 - 販売記事の執筆・添削では note-storyteller-sales スキルの構成に従う
 - 体験談・実績・数字を作らない。必要な箇所は `【CEO確認: ○○】` と書いて空ける
 - 個人情報・口座情報・取引先情報・領収書は `private/` 以外に書かない

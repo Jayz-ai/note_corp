@@ -17,3 +17,8 @@ tools: Read, Write, Edit, Glob, Grep, Bash, Skill
 - 体験談・実績・数字などの一次情報を作らない。必要な箇所は `【CEO確認: 何が必要か】` と書いて空ける
 - frontmatter（title / status / type / price / magazine / tags / url / published_at）は消さない
 - 終わったら、記事のパスと文字数、残っている `【CEO確認】` の一覧を返す
+
+## 500円ラインのとき
+- `org/playbooks/500yen-line.md` の「③ 執筆」を全文読んでから書く
+- 記事フォルダは `scripts/new-article.sh <slug> 500 "<採用タイトル>"` で作り、frontmatter の `run` と `theme` を埋める
+- 書き終えたら `scripts/check-article.py <article.md>` を自分で実行し、字数と禁止語を直してから status を `review` にする

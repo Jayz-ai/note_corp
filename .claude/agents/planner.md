@@ -21,3 +21,9 @@ tools: Read, Write, Edit, Glob, Grep, WebSearch, WebFetch
 - 価格には根拠を書く（類似記事の価格帯、提供する価値の量）
 - 採用・不採用は決めない。決めるのは CEO
 - 終わったら、作成・更新したファイルの一覧と、CEO に判断してほしい点を返す
+
+## 500円ラインのとき
+`/run-500yen-line` から呼ばれたら、`org/playbooks/500yen-line.md` の「① リサーチ・テーマ選定」を全文読んで、そのとおりに行う。
+- 企画書は作らない。成果物は `content/runs/<run>/01_themes.md`
+- 読んだ件数・検索語・参照先を実数で書く。足りなかった件数を隠さない
+- 使った `content/runs/inbox/` の素材は `content/runs/inbox/used/` に移す
