@@ -1,0 +1,17 @@
+# 機密情報
+private/
+*.pdf
+.env
+.env.*
+
+# 画像の元データ（書き出し済みのものだけ管理）
+*.psd
+*.ai
+*.raw
+
+# OS / エディタ
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

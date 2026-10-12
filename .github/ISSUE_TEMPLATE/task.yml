@@ -1,0 +1,23 @@
+name: 運営タスク
+description: 経理・法務・集客などの運営タスク
+title: "[運営] "
+labels: ["ops"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: 領域
+      options: [経理, 税務, 法務, 集客, 商品設計, その他]
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 内容
+    validations:
+      required: true
+  - type: input
+    id: due
+    attributes:
+      label: 期限
+      placeholder: "YYYY-MM-DD"

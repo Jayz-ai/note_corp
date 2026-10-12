@@ -1,0 +1,32 @@
+name: 記事企画
+description: 新しい note 記事の企画
+title: "[記事] "
+labels: ["article"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: 種別
+      options: [有料記事, 無料記事, マガジン]
+    validations:
+      required: true
+  - type: input
+    id: price
+    attributes:
+      label: 想定価格
+      placeholder: "500"
+  - type: textarea
+    id: target
+    attributes:
+      label: 対象読者と悩み
+    validations:
+      required: true
+  - type: textarea
+    id: value
+    attributes:
+      label: 読者が得られること（3つ）
+  - type: input
+    id: due
+    attributes:
+      label: 公開予定日
+      placeholder: "YYYY-MM-DD"
