@@ -29,7 +29,7 @@ note（note.com）でのコンテンツ販売を事業とする会社の運営�
 ```
 
 ### 500円ライン
-CEO が見つけた読者の悩みを `content/runs/inbox/` に置いて `/run-500yen-line` を実行すると、リサーチ → テーマ → タイトル → 執筆 → 検品まで進み、`ready` の記事がそろう。詳細は `org/playbooks/500yen-line.md`。
+朝8時の X 巡回ルーティン（PC 上、`ops/routines/x-scan-daily.md`）の結果や、CEO が見つけた読者の悩みを `content/runs/inbox/` に置いて `/run-500yen-line` を実行すると、リサーチ → テーマ → タイトル → 執筆 → 検品まで進み、`ready` の記事がそろう。詳細は `org/playbooks/500yen-line.md`。
 
 ## ディレクトリ構成
 
@@ -48,6 +48,6 @@ CEO が見つけた読者の悩みを `content/runs/inbox/` に置いて `/run-5
 | `marketing/` | 告知文・発信カレンダー | マーケティング部 |
 | `analytics/` | 売上・経費・月次レポート | 分析部 |
 | `templates/` | 企画書・記事・審査・月次レポートなどの雛形 | — |
-| `ops/` | 運営カレンダー・利用ツール | COO |
+| `ops/` | 運営カレンダー・利用ツール・PC 上のルーティンの説明（`routines/`） | COO |
 | `scripts/` | `new-article.sh`（記事フォルダの作成）、`check-article.py`（禁止語・有料ライン・字数のチェック） | — |
 | `private/` | 機密情報（Git の管理対象外） | CEO |
